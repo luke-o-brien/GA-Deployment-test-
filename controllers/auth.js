@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 
 const User = require('../models/user')
 
-const saltRounts = 12
+const saltRounds = 10
 
 router.post('/sign-up', async (req, res) => {
   try {
@@ -19,7 +19,7 @@ router.post('/sign-up', async (req, res) => {
     // Otherwise, let's create a new user with a hashed password
     const user = await User.create({
       username: req.body.username,
-      hashedPassword: bcrypt.hashSync(req.body.password, saltRounts)
+      hashedPassword: bcrypt.hashSync(req.body.password, saltRounds)
     })
 
     // Let's define our payload

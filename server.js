@@ -9,6 +9,7 @@ const logger = require('morgan');
 const testJwtRouter = require('./controllers/test-jwt')
 const authRouter = require('./controllers/auth')
 const userRouter = require('./controllers/users')
+const hootsRouter = require('./controllers/hoots')
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 // Routes go here
 app.use('/auth', authRouter)
 app.use('/users', userRouter)
+app.use('/hoots', hootsRouter)
 app.use('/test-jwt', testJwtRouter)
 
 app.listen(3000, () => {
