@@ -1,12 +1,13 @@
 const express = require("express");
-const serverless = require("serverless-http");
 
 const app = express();
 
-console.log("bye")
+console.log("bye");
+
 app.get("/hoots/hi", (req, res) => {
-  console.log("hi")
+  console.log("hi");
   res.status(200).json({ message: "hi Vercel!" });
 });
 
+// Export app without serverless-http (simplified version)
 module.exports = app;
