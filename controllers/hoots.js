@@ -31,7 +31,7 @@ router.get('/', verifyToken, async (req, res) => {
 
 router.get("/hi", async (req, res) => {
   try {
-    res.status(200).json([{ data: "hi"}]);
+    res.status(200).json([{ data: "hello"}]);
   } catch (error) {
     res.status(500).json({ err: error.message });
   }
