@@ -29,12 +29,8 @@ router.get('/', verifyToken, async (req, res) => {
   }
 })
 
-router.get("/hi", async (req, res) => {
-  try {
-    res.status(200).json([{ data: "hello"}]);
-  } catch (error) {
-    res.status(500).json({ err: error.message });
-  }
+router.get("/hi", (req, res) => {
+  res.status(200).json({ data: "hi" });
 });
 
 router.get('/:hootId', verifyToken, async (req, res) => {
