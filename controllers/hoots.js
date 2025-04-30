@@ -29,7 +29,7 @@ router.get('/', verifyToken, async (req, res) => {
   }
 })
 
-router.get("/hi", verifyToken, async (req, res) => {
+router.get("/hi", async (req, res) => {
   try {
     res.status(200).json([{ data: "hi"}]);
   } catch (error) {
