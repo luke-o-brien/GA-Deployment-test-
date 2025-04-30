@@ -9,4 +9,4 @@ app.get("/hoots/hi", (req, res) => {
   res.status(200).json({ message: "hi Vercel!" });
 });
 
-module.exports = serverless(app);
+module.exports = app;
